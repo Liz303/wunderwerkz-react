@@ -1,0 +1,21 @@
+$turquoise: #00ffec;
+$white: #fff;
+
+@font-family {
+  font-family: Nevis;
+  src: url(./font/nevis.ttf);
+}
+
+@keyframes rainbow {
+  0%   {color: #00ffec;}
+  25%  {color: #00b3a5;}
+  50%  {color: #ff4300;}
+  100% {color: #cc3314;}
+}
+
+@keyframes rainbow-background {
+  0%   {background-color: #00ffec;}
+  25%  {background-color: #00b3a5;}
+  50%  {background-color: #ff4300;}
+  100% {background-color: #cc3314;}
+}
