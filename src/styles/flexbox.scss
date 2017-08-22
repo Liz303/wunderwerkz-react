@@ -10,8 +10,12 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   .flex-half {
+    position: relative;
     width: 50%;
     @include flexbox;
     @include align-items(center);
+  }
+  .center {
+    @include justify-content(center);
   }
 }

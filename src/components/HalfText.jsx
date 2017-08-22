@@ -38,7 +38,9 @@ class HalfText extends React.Component {
                    {fontSize: '14vw', lineHeight: '16vw'} :
                    {fontSize: '14vh', lineHeight: '16vh'};
     return (
-      <h2 style={fontSize}> {this.props.children} </h2>
+      <h2
+        className={this.props.className}
+        style={fontSize}> {this.props.children} </h2>
     );
   }
 }

@@ -1,4 +1,6 @@
+@import "./mixins/flex";
 @import './flexbox';
+@import './vars';
 
 html, body {
   max-width: 100%;
@@ -7,7 +9,7 @@ html, body {
 }
 /* Styles */
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Nevis;
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
@@ -18,8 +20,52 @@ body {
 }
 
 h2 {
-  margin: 0;
   font-size: 30px;
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+h2, h4 {
+  margin: 0;
+  padding: 0 15px;
+}
+
+p {
+  margin: 0;
+  font-size: 35px;
+  line-height: 40px;
+  font-size: 5vh;
+  line-height: 7vh;
+  padding: 15px;
+  .center {
+    text-align: center;
+  }
+  &.small-text {
+    font-size: 3vh;
+    line-height: 5vh;
+  }
+}
+
+.cursor-click {
+  cursor: url('./images/click.png'), auto;
+}
+
+.cursor-scroll {
+  cursor: url('./images/scroll.png'), auto;
+}
+
+.cursor-download {
+  cursor: s-resize;
+}
+
+.rainbow {
+  animation-name: rainbow;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 // Card stuff
@@ -43,6 +89,47 @@ h2 {
   .flex-wrapper, .flex-half {
     height: 100%;
   }
+  .about {
+    .flex-half {
+      background: $turquoise;
+      color: $white;
+      transition: all .5s linear;
+      height: 90vh;
+      &:hover {
+        background: $white;
+        color: $turquoise;
+      }
+    }
+  }
+}
+
+.full-width-button {
+  width: 100%;
+  @include flexbox;
+  @include justify-content(center);
+  @include align-content(center);
+  @include align-items(center);
+  text-transform: uppercase;
+  font-size: 4vh;
+  height: 10vh;
+  animation-name: rainbow-background;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  color: white;
+  &:hover {
+    animation-duration: .5s;
+    animation-direction: normal;
+  }
+}
+
+.scrolltext {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  right: -10px;
+  padding: 0 15px;
 }
 
 // .pageSlider-enter {
