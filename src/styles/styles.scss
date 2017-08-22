@@ -1,31 +1,73 @@
-/* Variables */
-$vin-blue: #5bb7db;
-$vin-green: #60b044;
-$vin-red: #ff0000;
+@import './flexbox';
 
+html, body {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
 /* Styles */
 body {
-  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  line-height: 1.4em;
-  color: #4d4d4d;
-  min-width: 230px;
-  max-width: 550px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   font-smoothing: antialiased;
   font-weight: 300;
-}
-
-td {
-	padding: 12px;
+  font-size: 14px;
+  font-size: 100%;
 }
 
 h2 {
-	color: $vin-blue;
+  margin: 0;
+  font-size: 30px;
 }
 
-.savings { color: $vin-green; }
-.loss { color: $vin-red; }
-input.small { width: 46px; }
-td.fuel-savings-label { width: 175px; }
+// Card stuff
+.card {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 10px;
+  bottom: 0;
+  border-left: 3px solid black;
+  &.one {
+    left: 20px;
+  }
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  width: calc(100% - 20px);
+  height: 100%;
+  .flex-wrapper, .flex-half {
+    height: 100%;
+  }
+}
+
+// .pageSlider-enter {
+//   transform: translate3d(100%, 0, 0);
+// }
+
+.pageSlider-leave {
+  transform: translate3d(0, 0, 0);
+}
+
+.pageSlider-leave.pageSlider-leave-active {
+  transform: translate3d(100%, 0, 0);
+  transition: all 1s;
+}
+
+// .pageSlider-enter.pageSlider-enter-active {
+//   transform: translate3d(0, 0, 0);
+//   transition: all 600ms;
+// }
+
+.box {
+  width: 300px;
+  height: 300px;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  border: 3px solid black;
+}

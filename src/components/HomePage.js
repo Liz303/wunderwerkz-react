@@ -1,18 +1,44 @@
 import React from 'react';
 import {Link} from 'react-router';
+import { browserHistory } from 'react-router';
 
-const HomePage = () => {
-  return (
-    <div>
-      <h1>React Slingshot</h1>
+class HomePage extends React.Component {
+  componentWillAppear() {
+    debugger;
+  }
 
-      <h2>Get Started</h2>
-      <ol>
-        <li>Review the <Link to="fuel-savings">demo app</Link></li>
-        <li>Remove the demo and start coding: npm run remove-demo</li>
-      </ol>
-    </div>
-  );
-};
+  componentDidAppear() {
+    debugger;
+  }
+  componentWillEnter() {
+    debugger;
+  }
+  componentDidEnter() {
+    debugger;
+  }
+  componentWillLeave (callback) {
+    debugger;
+    const el = this.container;
+    TweenMax.fromTo(el, 1, {left: 0}, {left: '100%', onComplete: callback});
+  }
+
+  componentDidLeave() {
+    debugger;
+  }
+
+  handleTransition() {
+    browserHistory.push('/about');
+  }
+
+  render() {
+    return (
+      <div className="page card one"
+            onClick={this.handleTransition.bind(this)}
+            key="home">
+        <h2> Home Page </h2>
+      </div>
+    );
+  }
+}
 
 export default HomePage;
