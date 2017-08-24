@@ -9,6 +9,14 @@ class AboutPage extends React.Component {
     browserHistory.push('/');
   }
 
+  componentDidMount() {
+    debugger;
+  }
+
+  componentWillLeave() {
+    debugger;
+  }
+
   render() {
     return (
       <div className="page card one"
@@ -24,7 +32,7 @@ class AboutPage extends React.Component {
           <div className="flex-half">
             <ScrollText
               className='cursor-scroll'>
-              <p className="center rainbow"> ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ </p>
+              <p className="center rainbow"> ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏</p>
               <p>
                 Wunder Werkz is a full service design studio based in Denver,
                 Colorado and filled with design geeks and
@@ -38,11 +46,13 @@ class AboutPage extends React.Component {
                 barber shops to brothels, if you want to step out of the box and
                 get a little dangerous then we are the design studio for you.
               </p>
-              <p className="center rainbow"> ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ </p>
-            </ScrollText>
-          </div>
-          <div className="full-width-button cursor-download">
-            <span> Download a Deck </span>
+              <div className="full-width-button cursor-download">
+                <button> Download a Deck </button>
+              </div>
+              <p className="center rainbow"> ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏</p>
+
+          </ScrollText>
+
           </div>
         </div>
       </div>
