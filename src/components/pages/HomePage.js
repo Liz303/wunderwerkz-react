@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import { browserHistory } from 'react-router';
 
 class HomePage extends React.Component {
-  componentWillAppear() {
+  componentWillAppear(callback) {
     debugger;
   }
 
@@ -18,8 +18,8 @@ class HomePage extends React.Component {
   }
   componentWillLeave (callback) {
     debugger;
-    const el = this.container;
-    TweenMax.fromTo(el, 1, {left: 0}, {left: '100%', onComplete: callback});
+    // const el = this.container;
+    // TweenMax.fromTo(el, 1, {left: 0}, {left: '100%', onComplete: callback});
   }
 
   componentDidLeave() {
@@ -32,10 +32,13 @@ class HomePage extends React.Component {
 
   render() {
     return (
-      <div className="page card one"
-            onClick={this.handleTransition.bind(this)}
-            key="home">
-        <h2> Home Page </h2>
+      <div>
+        <div className="card two"/>
+        <div className="page card one"
+              onClick={this.handleTransition.bind(this)}
+              key="home">
+          <h2> Home Page </h2>
+        </div>
       </div>
     );
   }

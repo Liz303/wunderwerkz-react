@@ -9,50 +9,37 @@ class AboutPage extends React.Component {
     browserHistory.push('/');
   }
 
-  componentDidMount() {
-    // debugger;
+  componentWillAppear(callback) {
+    debugger;
   }
 
-  componentWillLeave() {
-    // debugger;
+  componentDidAppear() {
+    debugger;
+  }
+  componentWillEnter() {
+    debugger;
+  }
+  componentDidEnter() {
+    debugger;
+  }
+  componentWillLeave (callback) {
+    debugger;
+    // const el = this.container;
+    // TweenMax.fromTo(el, 1, {left: 0}, {left: '100%', onComplete: callback});
+  }
+
+  componentDidLeave() {
+    debugger;
   }
 
   render() {
     return (
-      <div className="page card one"
-            key="about">
-        <div className="flex-wrapper about">
-          <div className="flex-half center"
-               onClick={this.handleTransition.bind(this)}>
-            <HalfText
-              className='cursor-click'>
-               Bad Apples Good Design
-            </HalfText>
-          </div>
-          <div className="flex-half">
-            <ScrollText
-              className='cursor-scroll'>
-              <p className="center rainbow"> ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏</p>
-              <p>
-                Wunder Werkz is a full service design studio based in Denver,
-                Colorado and filled with design geeks and
-                pizza 🍕 🍕 🍕 lovers.
-                We work on both self produced and commissioned projects and
-                believe in style and simplicity that isn’t afraid to have some
-                fun 🎉 🎉 🎉.
-              </p>
-              <p>
-                From posters to palaces, typography to tattoo parlors,
-                barber shops to brothels, if you want to step out of the box and
-                get a little dangerous then we are the design studio for you.
-              </p>
-              <div className="full-width-button cursor-download">
-                <button> Download a Deck </button>
-              </div>
-              <p className="center rainbow"> ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏</p>
-
-          </ScrollText>
-          </div>
+      <div>
+        <div className="card two"/>
+        <div className="page card one"
+              onClick={this.handleTransition.bind(this)}
+              key="about">
+          <h2> absolutePage </h2>
         </div>
       </div>
     );
