@@ -22,7 +22,7 @@ class HalfText extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handelResize.bind(this));
+    window.removeEventListener('resize', this.handelResize);
   }
 
   handleResize(e) {
