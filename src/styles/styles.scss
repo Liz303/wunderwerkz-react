@@ -63,6 +63,7 @@ p {
 
 .react-draggable, .cursor {
   cursor: move;
+  cursor: url('./images/move.png'), auto;
 }
 .no-cursor {
   cursor: auto;
@@ -78,7 +79,6 @@ p {
   float: left;
   position: relative;
   display: inline-block;
-
   .overlay {
     position: absolute;
     height: 100%;
