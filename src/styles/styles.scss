@@ -61,6 +61,50 @@ p {
   cursor: s-resize;
 }
 
+.react-draggable, .cursor {
+  cursor: move;
+}
+.no-cursor {
+  cursor: auto;
+}
+.cursor-y {
+  cursor: ns-resize;
+}
+.cursor-x {
+  cursor: ew-resize;
+}
+
+.image-container {
+  border: 1px solid $teal;
+  width: 300px;
+  float: left;
+  height: 300px;
+  box-shadow: 5px 5px $teal;
+  &.oso {
+    background: url('./images/work/oso.jpg');
+    background-size: cover;
+  }
+  // &.drive {
+  //   background: url('./images/work/drive.jpg');
+  //   background-size: cover;
+  // }
+}
+
+.image-wrapper {
+  float: left;
+  position: relative;
+  display: inline-block;
+
+  .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+  }
+  img {
+    float: left;
+  }
+}
 .rainbow {
   animation-name: rainbow;
   animation-duration: 10s;
@@ -86,6 +130,11 @@ p {
   }
 }
 
+.work {
+  img {
+    max-width: 300px;
+  }
+}
 .page {
   position: absolute;
   background: white;
