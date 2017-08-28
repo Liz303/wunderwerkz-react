@@ -74,22 +74,6 @@ p {
   cursor: ew-resize;
 }
 
-.image-container {
-  border: 1px solid $teal;
-  width: 300px;
-  float: left;
-  height: 300px;
-  box-shadow: 5px 5px $teal;
-  &.oso {
-    background: url('./images/work/oso.jpg');
-    background-size: cover;
-  }
-  // &.drive {
-  //   background: url('./images/work/drive.jpg');
-  //   background-size: cover;
-  // }
-}
-
 .image-wrapper {
   float: left;
   position: relative;

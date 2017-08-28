@@ -75,14 +75,12 @@ class WorkPage extends React.Component {
   }
 
   onStart(i) {
-    console.log('start drag i ', i  );
    this.setState({activeDrags: ++this.state.activeDrags,
                   activeElement: i});
   }
 
   onStop() {
     this.setState({activeDrags: --this.state.activeDrags});
-    console.log('stop drag');
   }
 
   render() {
@@ -91,22 +89,6 @@ class WorkPage extends React.Component {
         {this.renderimages()}
       </div>
     );
-
-
-  //   <Draggable
-  //    onStart={this.onStart.bind(this)}
-  //    onStop={this.onStop.bind(this)}>
-  //   <div className="image-container oso">
-  //   </div>
-  //  </Draggable>
-  //  <Draggable
-  //   onStart={this.onStart.bind(this)}
-  //   onStop={this.onStop.bind(this)}>
-  //   <div className="image-wrapper">
-  //     <div className="overlay"/>
-  //     <img src="../styles/images/work/drive.jpg"/>
-  //   </div>
-  // </Draggable>
   }
 
 };
