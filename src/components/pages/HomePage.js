@@ -3,7 +3,21 @@ import {Link} from 'react-router';
 import { browserHistory } from 'react-router';
 
 class HomePage extends React.Component {
-  componentWillAppear() {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      isTransitioning: this.isTransitioning
+    }
+  }
+
+  get isTransitioning() {
+    if (this.props.key === 'root') {
+      return this.props.transitioning;
+    }
+    return false;
+  }
+
+  componentWillAppear(callback) {
     debugger;
   }
 
@@ -26,15 +40,14 @@ class HomePage extends React.Component {
     debugger;
   }
 
-  handleTransition() {
-    browserHistory.push('/about');
-  }
+  // handleTransition() {
+  //   debugger;
+  //   browserHistory.push('/about');
+  // }
 
   render() {
     return (
-      <div className="page card one"
-            onClick={this.handleTransition.bind(this)}
-            key="home">
+      <div className={`page ${this.state.isTransitioning ? 'transitioning' : ''}`} key="home" ref={c => this.homepage = c}>
         <h2> Home Page </h2>
       </div>
     );

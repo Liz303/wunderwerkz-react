@@ -109,8 +109,30 @@ p {
   left: 10px;
   bottom: 0;
   border-left: 3px solid black;
-  &.one {
+  transition: all 3s linear;
+  background: white;
+  opacity: 1;
+  &.active {
     left: 20px;
+  }
+  &.move-it {
+    left: 100%;
+    opacity: 0;
+    transition: all 3s linear;
+  }
+  &.left-align {
+    transition: all 0s linear;
+    left: -3px;
+  }
+  &.four {
+    left: 0;
+  }
+
+  .sidebar {
+    left: 0;
+    height: 100vh;
+    z-index: 1;;
+    padding-left: 5px;
   }
 }
 
@@ -119,11 +141,12 @@ p {
     max-width: 300px;
   }
 }
+
 .page {
   position: absolute;
-  background: white;
   top: 0;
   width: calc(100% - 20px);
+  left: 60px;
   height: 100%;
   .flex-wrapper, .flex-half {
     height: 100%;
@@ -132,7 +155,7 @@ p {
     .flex-half {
       background: $turquoise;
       color: $white;
-      transition: all .5s linear;
+      transition: all 3s linear;
       &:hover {
         background: $white;
         color: $turquoise;
@@ -188,29 +211,22 @@ button {
   }
 }
 
-// .pageSlider-enter {
-//   transform: translate3d(100%, 0, 0);
-// }
+.pageSlider-enter {
+  opacity: 0;
+}
 
 .pageSlider-leave {
   transform: translate3d(0, 0, 0);
+  opacity: 1;
 }
 
 .pageSlider-leave.pageSlider-leave-active {
   transform: translate3d(100%, 0, 0);
-  transition: all 1s;
+  opacity: 0;
+  transition: all 3s;
 }
 
-// .pageSlider-enter.pageSlider-enter-active {
-//   transform: translate3d(0, 0, 0);
-//   transition: all 600ms;
-// }
-
-.box {
-  width: 300px;
-  height: 300px;
-  left: 0;
-  position: absolute;
-  z-index: -1;
-  border: 3px solid black;
+.pageSlider-enter.pageSlider-enter-active {
+  transition: all 3s;
+  opacity: 1;
 }
