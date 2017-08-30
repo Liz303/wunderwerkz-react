@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { browserHistory } from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import ReactTransitionGroup from 'react-addons-transition-group';
 
 class App extends React.Component {
   constructor(...args) {
@@ -84,43 +85,69 @@ class App extends React.Component {
     let segment = path.split('/')[1] || 'root';
 
     return (
-        <ReactCSSTransitionGroup
-          transitionEnterTimeout={600}
-          transitionLeaveTimeout={600}
-          transitionName="pageSlider">
-          <div className={`card four ${this.activeCardClass() === 'four' ? 'active' : ''}`}
-               onMouseOver={this.updateActive.bind(this, 'cardFour', true)}
-               onMouseOut={this.updateActive.bind(this, 'cardFour', false)}
-               onClick={this.handleTransition.bind(this)}
-               ref={c => this.cardFour = c}>
-            <div className={`card three ${this.activeCardClass() === 'three' ? 'active' : ''}`}
-                 onMouseOver={this.updateActive.bind(this, 'cardThree', true)}
-                 onMouseOut={this.updateActive.bind(this, 'cardThree', false)}
-                 onClick={this.handleTransition.bind(this)}
-                 ref={c => this.cardThree = c}>
-              <div className={`card two ${this.activeCardClass() === 'two' ? 'active' : ''}`}
-                   onMouseOver={this.updateActive.bind(this, 'cardTwo', true)}
-                   onMouseOut={this.updateActive.bind(this, 'cardTwo', false)}
-                   onClick={this.handleTransition.bind(this)}
-                   ref={c => this.cardTwo = c}>
-                   <div className="sidebar">
-                     {this.cardTwoSidebar()}
-                   </div>
-                <div className={`card one ${this.activeCardClass() === 'one' ? 'active' : ''}`}
-                     onMouseOver={this.updateActive.bind(this, 'cardOne', true)}
-                     onMouseOut={this.updateActive.bind(this, 'cardOne', false)}
-                     onClick={this.handleTransition.bind(this, "one")}
-                     ref={c => this.cardOne = c}>
-                     <div className="sidebar">
-                       {this.cardOneSidebar()}
-                     </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {React.cloneElement(this.props.children, { key: segment })}
-       </ReactCSSTransitionGroup>
-    );
+      <ReactCSSTransitionGroup
+        transitionEnterTimeout={1000}
+        transitionLeaveTimeout={1000}
+        transitionAppearTimeout={2000}
+        transitionAppear={true}
+        transitionName={{
+          enter: 'enter',
+          enterActive: 'enterActive',
+          leave: 'leave',
+          leaveActive: 'leaveActive',
+          appear: 'appear',
+          appearActive: 'appearActive'
+        }}>
+        {React.cloneElement(this.props.children, { key: segment })}
+     </ReactCSSTransitionGroup>
+   );
+
+  //   return (
+  //     <ReactTransitionGroup
+  //       transitionEnterTimeout={600}
+  //       transitionLeaveTimeout={600}
+  //       transitionAppear={true}
+  //       transitionName="pageSlider">
+  //       {React.cloneElement(this.props.children, { key: segment })}
+  //    </ReactTransitionGroup>
+  //  );
+    //     <ReactCSSTransitionGroup
+    //       transitionEnterTimeout={600}
+    //       transitionLeaveTimeout={600}
+    //       transitionName="pageSlider">
+    //       <div className={`card four ${this.activeCardClass() === 'four' ? 'active' : ''}`}
+    //            onMouseOver={this.updateActive.bind(this, 'cardFour', true)}
+    //            onMouseOut={this.updateActive.bind(this, 'cardFour', false)}
+    //            onClick={this.handleTransition.bind(this)}
+    //            ref={c => this.cardFour = c}>
+    //         <div className={`card three ${this.activeCardClass() === 'three' ? 'active' : ''}`}
+    //              onMouseOver={this.updateActive.bind(this, 'cardThree', true)}
+    //              onMouseOut={this.updateActive.bind(this, 'cardThree', false)}
+    //              onClick={this.handleTransition.bind(this)}
+    //              ref={c => this.cardThree = c}>
+    //           <div className={`card two ${this.activeCardClass() === 'two' ? 'active' : ''}`}
+    //                onMouseOver={this.updateActive.bind(this, 'cardTwo', true)}
+    //                onMouseOut={this.updateActive.bind(this, 'cardTwo', false)}
+    //                onClick={this.handleTransition.bind(this)}
+    //                ref={c => this.cardTwo = c}>
+    //                <div className="sidebar">
+    //                  {this.cardTwoSidebar()}
+    //                </div>
+    //             <div className={`card one ${this.activeCardClass() === 'one' ? 'active' : ''}`}
+    //                  onMouseOver={this.updateActive.bind(this, 'cardOne', true)}
+    //                  onMouseOut={this.updateActive.bind(this, 'cardOne', false)}
+    //                  onClick={this.handleTransition.bind(this, "one")}
+    //                  ref={c => this.cardOne = c}>
+    //                  <div className="sidebar">
+    //                    {this.cardOneSidebar()}
+    //                  </div>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
+    //       {React.cloneElement(this.props.children, { key: segment })}
+    //    </ReactCSSTransitionGroup>
+    // );
   }
 }
 

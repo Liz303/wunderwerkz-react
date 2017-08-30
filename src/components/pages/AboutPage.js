@@ -5,14 +5,15 @@ import ScrollText from '../ScrollText';
 
 // Since this component is simple and static, there's no parent container for it.
 class AboutPage extends React.Component {
-  // handleTransition() {
-  //   browserHistory.push('/');
-  // }
+  handleTransition() {
+    debugger;
+    browserHistory.push('/');
+  }
 
   componentWillAppear(callback) {
     debugger;
-    const el = this.container;
-    TweenMax.fromTo(el, 1, {left: 0}, {left: '100%', onComplete: callback});
+    // const el = this.container;
+    // TweenMax.fromTo(el, 1, {left: 0}, {left: '100%', onComplete: callback});
   }
 
   componentDidAppear() {
@@ -36,8 +37,29 @@ class AboutPage extends React.Component {
 
   render() {
     return (
-      <div className="page" key="about">
-        <h2> absolutePage </h2>
+      <div className="card four"
+           key="about"
+          ref={c => this.cardFour = c}
+          style={{opacity: 1}}>
+          <div className="sidebar">
+              <span>H<br/>O<br/>M<br/>E</span>
+          </div>
+        <div className="card three"
+             ref={c => this.cardThree = c}>
+          <div className="card two"
+               ref={c => this.cardTwo = c}
+               onClick={this.handleTransition.bind(this)}>
+            <div className="card one"
+                 ref={c => this.cardOne = c}>
+                 <div className="sidebar">
+                    <span>A<br/>B<br/>O<br/>U<br/>T</span>
+                 </div>
+              <div className="page"  ref={c => this.aboutpage = c}>
+                <h2> About Page </h2>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
