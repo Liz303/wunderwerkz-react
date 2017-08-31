@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router';
 import Draggable from 'react-draggable';
+import Navigation from '../Navigation';
 
-// Since this component is simple and static, there's no parent container for it.
 class WorkPage extends React.Component {
   constructor(...args) {
     super(...args);
@@ -28,7 +28,7 @@ class WorkPage extends React.Component {
 
     this.imageArray.forEach(i => {
       let yPos = this.getRandomInt(0, this.winHeight) + 'px';
-      let xPos = this.getRandomInt(0, this.winWidth) + 'px';
+      let xPos = this.getRandomInt(0, this.winWidth) + 50 + 'px';
       let color = this.colorArray[this.getRandomInt(0,3)];
       this.yPositionArray.push(yPos);
       this.xPositionArray.push(xPos);
@@ -52,7 +52,7 @@ class WorkPage extends React.Component {
       let boxShadow = '5px 5px ' + this.colorArrayStatic[i -1];
       let zIndex = this.state.activeElement === i ? '1000' : i;
       let yPos = this.yPositionArray[i - 1];
-      let xPos = this.xPositionArray[i -1 ];
+      let xPos = this.xPositionArray[i - 1];
 
       return (
         <Draggable key={i}>
@@ -85,28 +85,11 @@ class WorkPage extends React.Component {
 
   render() {
     return (
-      <div className="card four"
-           key="work"
-          ref={c => this.cardFour = c}>
-          <div className="sidebar">
-              <span>A<br/>B<br/>O<br/>U<br/>T</span>
-          </div>
-        <div className="card three"
-             ref={c => this.cardThree = c}>
-          <div className="card two"
-               ref={c => this.cardTwo = c}>
-            <div className="card one"
-                 ref={c => this.cardOne = c}>
-                 <div className="sidebar">
-                    <span>W<br/>O<br/>R<br/>K</span>
-                 </div>
-                <div className="work page">
-                  Wrok PAge
-                </div>
+        <Navigation one="work" two="contact" three="root" four="about">
+            <div className="work page">
+              {this.renderimages()}
             </div>
-          </div>
-        </div>
-      </div>
+        </Navigation>
     );
   }
 

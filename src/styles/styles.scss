@@ -255,6 +255,12 @@ button {
   .enter { left: -30px; }
 }
 
+.three {
+  .leave .three { transform: translate3d(0, 0, 0); }
+  .leaveActive .three { transform: translate3d(100%, 0, 0); }
+  .appear { left: -45px; }
+  .enter { left: -45px; }
+}
 
 // Transition page slider
 // .pageSlider-enter {

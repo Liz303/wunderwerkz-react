@@ -8,33 +8,58 @@ class App extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
-      previousPath: null,
-      nextPath: null,
       cardsToMove: null
     }
+  }
+
+  oneCard(previousPath, nextPath) {
+    if ((previousPath === '/' && nextPath === '/about') ||
+        (previousPath === '/about' && nextPath ==='/work') ||
+        (previousPath === '/work' && nextPath === '/contact') ||
+        (previousPath === '/contact' && nextPath === '/')) {
+      return true;
+    }
+    return false;
+  }
+
+  twoCard(previousPath, nextPath) {
+    if ((previousPath === '/' && nextPath === '/work') ||
+        (previousPath === '/about' && nextPath === '/contact') ||
+        (previousPath === '/work' && nextPath === '/') ||
+        (previousPath === '/contact') && nextPath === '/about') {
+          return true;
+    }
+    return false;
+  }
+
+  threeCard(previousPath, nextPath) {
+    if ((previousPath === '/' && nextPath === '/contact') ||
+        (previousPath === '/about' && nextPath === '/') ||
+        (previousPath === '/work' && nextPath === '/about') ||
+        (previousPath === '/contact') && nextPath === '/work') {
+          return true;
+    }
+    return false;
   }
 
   componentWillReceiveProps(nextProps) {
     let previousPath = this.props.location.pathname;
     let nextPath =  nextProps.location.pathname;
     if (previousPath !== nextPath) {
-      if ((previousPath === '/' && nextPath === '/about') ||
-          (previousPath === '/about' && nextPath ==='/work')) {
+      if (this.oneCard(previousPath, nextPath)) {
         this.setState({cardsToMove: 'one'});
-      } else if ((previousPath === '/' && nextPath === '/work')) {
+      } else if (this.twoCard(previousPath, nextPath)) {
         this.setState({cardsToMove: 'two'});
+      } else if (this.threeCard(previousPath, nextPath)) {
+        this.setState({cardsToMove: 'three'});
       }
-      this.setState({previousPath: this.props.location.pathname});
-      this.setState({nextPath: nextProps.location.pathname});
     }
   }
 
   render() {
     let path = this.props.location.pathname;
     let segment = path.split('/')[1] || 'root';
-    let previousPath = this.state.previousPath;
-    let nextPath = this.state.nextPath;
-
+    
     return (
       <ReactCSSTransitionGroup
         transitionEnterTimeout={500}
