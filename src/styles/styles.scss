@@ -109,9 +109,8 @@ p {
   left: 10px;
   bottom: 0;
   border-left: 3px solid black;
-  transition: all 1s linear;
+  transition: all .5s linear;
   background: white;
-  opacity: 1;
   &.active {
     left: 20px;
   }
@@ -211,65 +210,77 @@ button {
   }
 }
 
-.enter {
-  opacity: 0;
-  left: -10px !important;
-}
 
-.enterActive {
-  transition: all 1s;
-  opacity: 1;
-}
 
 .leave {
-  .one {
-    transform: translate3d(0, 0, 0);
-  }
   opacity: 1;
 }
 
 .leaveActive {
-  transition: all 1s;
-  .one {
-    transform: translate3d(100%, 0, 0);
-  }
+  transition: all .5s;
   opacity: 0;
 }
 
 .appear {
-  left: -10px !important;
+  opacity: 0;
+  transition: all .5s linear;
 }
 
 .appearActive {
-  transition: all 2s;
-  left: 0 !important;
+  opacity: 1;
+  transition: all .5s linear;
+  left: 0px ;
 }
+
+.enter {
+  opacity: 0;
+  &.enterActive {
+    transition: all .5s;
+    opacity: 1;
+  }
+}
+
+
+.one {
+  .leave .one { transform: translate3d(0, 0, 0); }
+  .leaveActive .one { transform: translate3d(100%, 0, 0); }
+  .appear { left: -15px; }
+  .enter { left: -15px; }
+}
+
+.two {
+  .leave .two { transform: translate3d(0, 0, 0); }
+  .leaveActive .two { transform: translate3d(100%, 0, 0); }
+  .appear { left: -30px; }
+  .enter { left: -30px; }
+}
+
 
 // Transition page slider
-.pageSlider-enter {
-  opacity: 1;
-  left: -10px !important;
-  background: red;
-}
-
-.pageSlider-leave {
-  .one {
-    transform: translate3d(0, 0, 0);
-  }
-  opacity: 1;
-}
-
-.pageSlider-leave.pageSlider-leave-active {
-  .one {
-    transform: translate3d(100%, 0, 0);
-  }
-  opacity: 0;
-  transition: all 1s;
-}
-
-.pageSlider-enter.pageSlider-enter-active {
-  transition: all 1s;
-  opacity: 1;
-  background: black;
-  left: 0 !important;
-}
+// .pageSlider-enter {
+//   opacity: 1;
+//   left: -10px !important;
+//   background: red;
+// }
+//
+// .pageSlider-leave {
+//   .move {
+//     transform: translate3d(0, 0, 0);
+//   }
+//   opacity: 1;
+// }
+//
+// .pageSlider-leave.pageSlider-leave-active {
+//   .move {
+//     transform: translate3d(100%, 0, 0);
+//   }
+//   opacity: 0;
+//   transition: all 1s;
+// }
+//
+// .pageSlider-enter.pageSlider-enter-active {
+//   transition: all 1s;
+//   opacity: 1;
+//   background: black;
+//   left: 0 !important;
+// }

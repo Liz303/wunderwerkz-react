@@ -85,8 +85,27 @@ class WorkPage extends React.Component {
 
   render() {
     return (
-      <div className="work page">
-        {this.renderimages()}
+      <div className="card four"
+           key="work"
+          ref={c => this.cardFour = c}>
+          <div className="sidebar">
+              <span>A<br/>B<br/>O<br/>U<br/>T</span>
+          </div>
+        <div className="card three"
+             ref={c => this.cardThree = c}>
+          <div className="card two"
+               ref={c => this.cardTwo = c}>
+            <div className="card one"
+                 ref={c => this.cardOne = c}>
+                 <div className="sidebar">
+                    <span>W<br/>O<br/>R<br/>K</span>
+                 </div>
+                <div className="work page">
+                  Wrok PAge
+                </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
