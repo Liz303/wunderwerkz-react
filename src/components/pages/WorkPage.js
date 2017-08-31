@@ -27,13 +27,14 @@ class WorkPage extends React.Component {
     this.winHeight = window.innerHeight -100;
 
     this.imageArray.forEach(i => {
-      let yPos = this.getRandomInt(0, this.winHeight) + 'px';
-      let xPos = this.getRandomInt(0, this.winWidth) + 50 + 'px';
+      let yPos = this.getRandomInt(10, this.winHeight) + 'px';
+      let xPos = this.getRandomInt(60, (this.winWidth - 60)) + 'px';
       let color = this.colorArray[this.getRandomInt(0,3)];
       this.yPositionArray.push(yPos);
       this.xPositionArray.push(xPos);
       this.colorArrayStatic.push(color);
     });
+    console.log(this.xPositionArray);
   }
 
   getRandomInt(min, max) {
@@ -55,7 +56,7 @@ class WorkPage extends React.Component {
       let xPos = this.xPositionArray[i - 1];
 
       return (
-        <Draggable key={i}>
+        <Draggable bounds="parent" key={i}>
            <div className="image-wrapper"
                 style={{position: 'absolute',
                         bottom: yPos,
