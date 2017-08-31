@@ -15,7 +15,8 @@
     @include flexbox;
     @include align-items(center);
   }
-  .center {
+  &.center, .center {
     @include justify-content(center);
+    @include align-items(center);
   }
 }

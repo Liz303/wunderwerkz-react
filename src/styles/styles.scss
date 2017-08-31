@@ -126,7 +126,9 @@ p {
   &.four {
     left: 0;
   }
-
+  &.two, &.three, &.four {
+    cursor: pointer;
+  }
   .sidebar {
     left: 0;
     height: 100vh;
@@ -151,6 +153,14 @@ p {
   .flex-wrapper, .flex-half {
     height: 100%;
   }
+  &.home {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
   .about {
     .flex-half {
       background: $turquoise;
@@ -161,6 +171,16 @@ p {
         color: $turquoise;
       }
     }
+  }
+}
+
+svg path, svg path:hover, svg polygon:hover {
+    fill: #FFF;
+}
+svg polygon {
+  fill: $turquoise;
+  &:hover {
+    cursor: pointer;
   }
 }
 

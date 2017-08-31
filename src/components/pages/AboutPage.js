@@ -38,7 +38,6 @@ class AboutPage extends React.Component {
                    <button> Download a Deck </button>
                  </div>
                  <p className="center rainbow"> ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏</p>
-
              </ScrollText>
              </div>
            </div>
