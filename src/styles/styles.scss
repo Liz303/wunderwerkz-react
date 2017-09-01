@@ -51,24 +51,31 @@ p {
 
 .contact {
   .scrolltext {
+    .info-group {
+      padding: 30px 0;
+    }
     &:hover {
       p {
         color: black;
       }
+      a:hover p{
+        animation-name: rainbow;
+        animation-duration: .5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
     }
   }
   p {
-    font-size: 30px;
-    line-height: 32px;
+    font-size: 20px;
+    line-height: 25px;
+    text-transform: uppercase;
+    padding-bottom: 0;
   }
   a p {
-    content: '';
-    left: 0;
-    right: 0;
-    top: 50%;
-    height: 50%;
-    width: 100%;
-    background: #00FFEC;
+    font-size: 30px;
+    line-height: 35px;
+    text-transform: none;
   }
 }
 
