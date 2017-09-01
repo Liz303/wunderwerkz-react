@@ -33,11 +33,11 @@ class AboutPage extends React.Component {
                    barber shops to brothels, if you want to step out of the box and
                    get a little dangerous then we are the design studio for you.
                  </p>
-                 <div className="full-width-button cursor-download">
-                   <button> Download a Deck </button>
-                 </div>
                  <p className="center rainbow"> ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏</p>
              </ScrollText>
+             </div>
+             <div className="absolute-button cursor-download">
+               <button> The Deck </button>
              </div>
            </div>
         </div>

@@ -16,7 +16,37 @@ class WorkPage extends React.Component {
         x: -400, y: 200
       }
     };
-    this.imageArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    this.imageArray = [
+      { id: 1,
+        image: '1.jpg',
+       description: "This is one"},
+      { id: 2,
+        image: '2.jpg',
+        description: "This is two"},
+      { id: 3,
+        image: '3.png',
+        description: "This is three"},
+      { id: 4,
+        image: '4.jpg',
+        description: "This is four"},
+      { id: 5,
+        image: '5.jpg',
+        description: "This is five"},
+      { id: 6,
+        image: '6.jpg',
+        description: "This is six"},
+      { id: 7,
+        image: '7.jpg',
+        description: "This is seven"},
+      { id: 8,
+        image: '8.jpg',
+        description: "This is eight"},
+      { id: 9,
+        image: '9.jpg',
+        description: "This is nine"},
+      { id: 10,
+        image: '10.jpg',
+        description: "This is ten"}];
     this.colorArray = ['#00ffec', '#00b3a5', '#ff4300', '#cc3314'];
 
     this.yPositionArray = [];
@@ -44,51 +74,63 @@ class WorkPage extends React.Component {
   }
 
   setActiveElement(i) {
+    console.log('active element ', i);
     this.setState({activeElement: i});
   }
 
+  onStart(i) {
+    console.log('start ', i);
+   this.setState({activeDrags: ++this.state.activeDrags,
+                  activeElement: i});
+  }
+
+  onStop() {
+    console.log('stopt');
+    this.setState({activeDrags: --this.state.activeDrags});
+  }
+
+
   renderimages() {
     return this.imageArray.map(i => {
-      let border = '1px solid ' + this.colorArrayStatic[i - 1];
-      let boxShadow = '5px 5px ' + this.colorArrayStatic[i -1];
-      let zIndex = this.state.activeElement === i ? '1000' : i;
-      let yPos = this.yPositionArray[i - 1];
-      let xPos = this.xPositionArray[i - 1];
+      let image = i.id;
+      let border = '1px solid ' + this.colorArrayStatic[image - 1];
+      let boxShadow = '5px 5px ' + this.colorArrayStatic[image -1];
+      let zIndex = this.state.activeElement === image ? '1000' : image;
+      let yPos = this.yPositionArray[image - 1];
+      let xPos = this.xPositionArray[image - 1];
 
       return (
-        <Draggable bounds="parent" key={i}>
+        <Draggable bounds="parent" key={image}
+                  onStart={this.onStart.bind(this, image)}
+                  onStop={this.onStop.bind(this)}>
            <div className="image-wrapper"
                 style={{position: 'absolute',
                         bottom: yPos,
                         right: xPos,
-                        border: border,
-                        boxShadow: boxShadow,
                         zIndex: zIndex}}
-                onStart={this.onStart.bind(this, i)}
-                onStop={this.onStop.bind(this)}
-                onClick={this.setActiveElement.bind(this, i)}>
+                onClick={this.setActiveElement.bind(this, image)}>
              <div className="overlay"/>
-             <img src={`../styles/images/work/${i}.jpg`}/>
+             <img src={`../styles/images/work/${i.image}`}/>
            </div>
          </Draggable>
       );
     });
   }
 
-  onStart(i) {
-   this.setState({activeDrags: ++this.state.activeDrags,
-                  activeElement: i});
-  }
-
-  onStop() {
-    this.setState({activeDrags: --this.state.activeDrags});
-  }
 
   render() {
     return (
         <Navigation one="work" two="contact" three="root" four="about">
             <div className="work page">
               {this.renderimages()}
+              <div className="instagram-link rainbow">
+                some stuff we're doing <br/> @wunder_werkz
+              </div>
+              <div className="info-box">
+                <p>
+                  {this.imageArray[this.state.activeElement - 1] ? this.imageArray[this.state.activeElement - 1].description : 'go fuck yourself'}
+                </p>
+              </div>
             </div>
         </Navigation>
     );

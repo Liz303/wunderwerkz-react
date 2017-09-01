@@ -35,7 +35,7 @@ class HalfText extends React.Component {
 
   render() {
     let fontSize = this.state.width > this.state.height ?
-                    {fontSize: '22vh', lineHeight: '25vh'} :
+                    {fontSize: '17vh', lineHeight: '19vh'} :
                    {fontSize: '14vw', lineHeight: '16vw'};
     return (
       <h2

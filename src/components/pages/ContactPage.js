@@ -13,7 +13,7 @@ class ContactPage extends React.Component {
             <div className="flex-half center">
               <HalfText
                 className='cursor-click'>
-                 Reach Out and Get in Touch
+                 Reach Out and Touch Us
               </HalfText>
             </div>
             <div className="flex-half center"
@@ -63,7 +63,7 @@ class ContactPage extends React.Component {
                   <a href="https://www.facebook.com/wunderwerkz">
                     <p>/wunderwerkz</p>
                   </a>
-                </div>  
+                </div>
                 <div className="info-group">
                   <p className="center single-line"> 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎 📎</p>
                   <p> get behanced </p>
