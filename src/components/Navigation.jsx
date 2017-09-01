@@ -63,32 +63,28 @@ class Navigation extends React.Component {
           onMouseOver={this.updateActive.bind(this, 'cardFour', true)}
           onMouseOut={this.updateActive.bind(this, 'cardFour', false)}
           onClick={this.handleTransition.bind(this)}
-          key={this.props.one}
-          ref={c => this.cardFour = c}>
+          key={this.props.one}>
           <div className="sidebar">
             {this.cardSidebar(this.props.four)}
           </div>
        <div className={`card three ${this.activeCardClass() === 'three' ? 'active' : ''}`}
             onMouseOver={this.updateActive.bind(this, 'cardThree', true)}
             onMouseOut={this.updateActive.bind(this, 'cardThree', false)}
-            onClick={this.handleTransition.bind(this)}
-            ref={c => this.cardThree = c}>
+            onClick={this.handleTransition.bind(this)}>
             <div className="sidebar">
               {this.cardSidebar(this.props.three)}
             </div>
          <div className={`card two ${this.activeCardClass() === 'two' ? 'active' : ''}`}
               onMouseOver={this.updateActive.bind(this, 'cardTwo', true)}
               onMouseOut={this.updateActive.bind(this, 'cardTwo', false)}
-              onClick={this.handleTransition.bind(this)}
-              ref={c => this.cardTwo = c}>
+              onClick={this.handleTransition.bind(this)}>
               <div className="sidebar">
                 {this.cardSidebar(this.props.two)}
               </div>
            <div className={`card one ${this.activeCardClass() === 'one' ? 'active' : ''}`}
                 onMouseOver={this.updateActive.bind(this, 'cardOne', true)}
                 onMouseOut={this.updateActive.bind(this, 'cardOne', false)}
-                onClick={this.handleTransition.bind(this, "one")}
-                ref={c => this.cardOne = c}>
+                onClick={this.handleTransition.bind(this, "one")}>
                 <div className="sidebar">
                   {this.cardSidebar(this.props.one)}
                 </div>

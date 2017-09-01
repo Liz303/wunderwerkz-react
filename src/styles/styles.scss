@@ -49,6 +49,34 @@ p {
   }
 }
 
+.contact {
+  .scrolltext {
+    &:hover {
+      p {
+        color: black;
+      }
+    }
+  }
+  p {
+    font-size: 30px;
+    line-height: 32px;
+  }
+  a p {
+    content: '';
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 50%;
+    width: 100%;
+    background: #00FFEC;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .cursor-click {
   cursor: url('./images/click.png'), auto;
 }
@@ -94,6 +122,14 @@ p {
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  text-overflow: clip;
+  white-space: nowrap;
+  padding: 0;
+  margin: 15px;
+  overflow: hidden;
+}
+
+.single-line {
   text-overflow: clip;
   white-space: nowrap;
   padding: 0;

@@ -36,7 +36,6 @@ class HomePage extends React.Component {
     return (
       <Navigation one="root" two="about" three="work" four="contact">
         <div className="home page flex-wrapper center cursor-click"
-             ref={c => this.homepage = c}
              style={{backgroundImage: background}}>
              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" x="0px" y="0px" width="1024px" height="319.543px" viewBox="0 225.957 1024 319.543" enable-background="new 0 225.957 1024 319.543">
              <path class="letter-part-three" fill="#231F20" d="M191.408,227.286h-24.693v0.907c11.646,2.784,20.892,11.759,24.063,23.252h0.63h0.555h0.63  c3.171-11.494,12.417-20.469,24.063-23.252v-0.907h-24.693H191.408z"/>

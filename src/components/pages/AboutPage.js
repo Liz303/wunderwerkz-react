@@ -7,8 +7,7 @@ class AboutPage extends React.Component {
   render() {
     return (
       <Navigation one="about" two="work" three="contact" four="root">
-        <div className="page"
-             ref={c => this.aboutpage = c}>
+        <div className="page">
            <div className="flex-wrapper about">
              <div className="flex-half center">
                <HalfText
