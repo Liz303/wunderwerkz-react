@@ -151,7 +151,13 @@ a {
   position: absolute;
   top: 30px;
   left: 30px;
+  width: 200px;
   border: 1px solid black;
+  p {
+    font-size: 12px;
+    line-height: 16px;
+    text-align: left;
+  }
 }
 
 .single-line {

@@ -2,8 +2,8 @@ $turquoise: #00ffec;
 $white: #fff;
 $brightteal: #00ffec;
 $teal: #00b3a5;
-$red: #ff4300;
-$darkred: #cc3314;
+$red: #ff9aa0;
+$darkred: #ff4d59;
 
 @font-family {
   font-family: Nevis;
@@ -13,13 +13,13 @@ $darkred: #cc3314;
 @keyframes rainbow {
   0%   {color: $brightteal;}
   25%  {color: $teal;}
-  50%  {color: $red;}
-  100% {color: $darkred;}
+  50%  {color: $darkred;}
+  100% {color: $red;}
 }
 
 @keyframes rainbow-background {
   0%   {background-color: $brightteal;}
   25%  {background-color: $teal;}
-  50%  {background-color: $red;}
-  100% {background-color: $darkred;}
+  50%  {background-color: $darkred;}
+  100% {background-color: $red;}
 }
