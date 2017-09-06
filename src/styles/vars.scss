@@ -23,3 +23,10 @@ $darkred: #ff4d59;
   50%  {background-color: $darkred;}
   100% {background-color: $red;}
 }
+
+@keyframes rainbow-fill {
+  0%   {fill: $brightteal;}
+  25%  {fill: $teal;}
+  50%  {fill: $darkred;}
+  100% {fill: $red;}
+}

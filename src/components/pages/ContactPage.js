@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import { browserHistory } from 'react-router';
 import HalfText from '../HalfText';
 import ScrollText from '../ScrollText';
 import Navigation from '../Navigation';
@@ -10,7 +11,8 @@ class ContactPage extends React.Component {
       <Navigation one="contact" two="root" three="about" four="work">
         <div className="page contact">
           <div className="flex-wrapper about">
-            <div className="flex-half center">
+            <div className="flex-half center"
+                 onClick={() => { browserHistory.push('/'); }}>
               <HalfText
                 className='cursor-click'>
                  Reach Out and Touch Us

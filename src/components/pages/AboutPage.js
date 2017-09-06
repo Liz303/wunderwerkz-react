@@ -1,4 +1,5 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 import HalfText from '../HalfText';
 import ScrollText from '../ScrollText';
 import Navigation from '../Navigation';
@@ -9,7 +10,8 @@ class AboutPage extends React.Component {
       <Navigation one="about" two="work" three="contact" four="root">
         <div className="page">
            <div className="flex-wrapper about">
-             <div className="flex-half center">
+             <div className="flex-half center"
+                  onClick={() => {browserHistory.push('/work');}}>
                <HalfText
                  className='cursor-click'>
                   Bad Apples Good Design
@@ -37,7 +39,9 @@ class AboutPage extends React.Component {
              </ScrollText>
              </div>
              <div className="absolute-button cursor-download">
-               <button> The Deck </button>
+               <a href='../images/about/Wunderwerkz_capabilities.pdf' download>
+                 <button> The Deck </button>
+               </a>   
              </div>
            </div>
         </div>
