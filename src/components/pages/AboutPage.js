@@ -1,8 +1,8 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
-import HalfText from '../HalfText';
-import ScrollText from '../ScrollText';
-import Navigation from '../Navigation';
+import HalfText from '../HalfText.jsx';
+import ScrollText from '../ScrollText.jsx';
+import Navigation from '../Navigation.jsx';
 
 class AboutPage extends React.Component {
   render() {
@@ -13,14 +13,14 @@ class AboutPage extends React.Component {
              <div className="flex-half center"
                   onClick={() => {browserHistory.push('/work');}}>
                <HalfText
-                 className='cursor-click'>
+                 className="cursor-click">
                   Bad Apples Good Design
                </HalfText>
              </div>
              <div className="flex-half"
                   onClick={e => e.stopPropagation()}>
                <ScrollText
-                 className='cursor-scroll'>
+                 className="cursor-scroll">
                  <p className="center rainbow"> ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏</p>
                  <p>
                    Wunder Werkz is a full service design studio based in Denver,
@@ -41,7 +41,7 @@ class AboutPage extends React.Component {
              <div className="absolute-button cursor-download">
                <a href='../images/about/Wunderwerkz_capabilities.pdf' download>
                  <button> The Deck </button>
-               </a>   
+               </a>
              </div>
            </div>
         </div>

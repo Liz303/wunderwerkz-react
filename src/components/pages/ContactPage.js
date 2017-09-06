@@ -1,9 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router';
 import { browserHistory } from 'react-router';
-import HalfText from '../HalfText';
-import ScrollText from '../ScrollText';
-import Navigation from '../Navigation';
+import HalfText from '../HalfText.jsx';
+import ScrollText from '../ScrollText.jsx';
+import Navigation from '../Navigation.jsx';
 
 class ContactPage extends React.Component {
   render() {
@@ -21,7 +20,7 @@ class ContactPage extends React.Component {
             <div className="flex-half center"
                  onClick={e => e.stopPropagation()}>
               <ScrollText
-                className='cursor-scroll'>
+                className="cursor-scroll">
                 <div className="info-group">
                   <p className="left"> ✌ </p>
                   <p className="left">

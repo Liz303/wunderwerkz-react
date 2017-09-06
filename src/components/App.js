@@ -1,43 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { browserHistory } from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import ReactTransitionGroup from 'react-addons-transition-group';
-import ScrollText from './ScrollText';
+import ScrollText from './ScrollText.jsx';
 
 class App extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
       cardsToMove: null
-    }
+    };
   }
 
   oneCard(previousPath, nextPath) {
-    if ((previousPath === '/' && nextPath === '/about') ||
-        (previousPath === '/about' && nextPath ==='/work') ||
-        (previousPath === '/work' && nextPath === '/contact') ||
-        (previousPath === '/contact' && nextPath === '/')) {
+    if ((previousPath === "/" && nextPath === "/about") ||
+        (previousPath === "/about" && nextPath ==="/work") ||
+        (previousPath === "/work" && nextPath === "/contact") ||
+        (previousPath === "/contact" && nextPath === "/")) {
       return true;
     }
     return false;
   }
 
   twoCard(previousPath, nextPath) {
-    if ((previousPath === '/' && nextPath === '/work') ||
-        (previousPath === '/about' && nextPath === '/contact') ||
-        (previousPath === '/work' && nextPath === '/') ||
-        (previousPath === '/contact') && nextPath === '/about') {
+    if ((previousPath === "/" && nextPath === "/work") ||
+        (previousPath === "/about" && nextPath === "/contact") ||
+        (previousPath === "/work" && nextPath === "/") ||
+        (previousPath === "/contact") && nextPath === "/about") {
           return true;
     }
     return false;
   }
 
   threeCard(previousPath, nextPath) {
-    if ((previousPath === '/' && nextPath === '/contact') ||
-        (previousPath === '/about' && nextPath === '/') ||
-        (previousPath === '/work' && nextPath === '/about') ||
-        (previousPath === '/contact') && nextPath === '/work') {
+    if ((previousPath === "/" && nextPath === "/contact") ||
+        (previousPath === "/about" && nextPath === "/") ||
+        (previousPath === "/work" && nextPath === "/about") ||
+        (previousPath === "/contact") && nextPath === "/work") {
           return true;
     }
     return false;
@@ -85,7 +83,7 @@ class App extends React.Component {
          <ScrollText
            className='cursor-scroll'>
          <div className="logo-wrap">
-           <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" x="0px" y="0px" width="100%" height="auto" viewBox="0 225.957 1024 319.543" enable-background="new 0 225.957 1024 319.543">
+           <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" x="0px" y="0px" width="100%" height="auto" viewBox="0 225.957 1024 319.543" enableBackground="new 0 225.957 1024 319.543">
              <path className="letter-part-three" fill="#231F20" d="M191.408,227.286h-24.693v0.907c11.646,2.784,20.892,11.759,24.063,23.252h0.63h0.555h0.63  c3.171-11.494,12.417-20.469,24.063-23.252v-0.907h-24.693H191.408z"/>
              <path className="letter-part" fill="#231F20" d="M48.576,244.026l44.026,111.75l10.896-25.181l-35.289-91.006c4.497-5.586,10.777-9.676,17.98-11.397v-0.907  H61.705H60.94H27.583v0.907C36.579,230.344,44.137,236.187,48.576,244.026z"/>
              <path className="letter-part" fill="#231F20" d="M116.273,244.026l44.026,111.75l10.898-25.181l-35.291-91.006c4.496-5.586,10.779-9.676,17.982-11.397  v-0.907h-24.487h-0.762H95.283v0.907C104.276,230.344,111.834,236.187,116.273,244.026z"/>

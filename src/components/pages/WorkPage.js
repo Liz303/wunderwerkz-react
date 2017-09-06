@@ -1,7 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router';
 import Draggable from 'react-draggable';
-import Navigation from '../Navigation';
+import Navigation from '../Navigation.jsx';
 
 class WorkPage extends React.Component {
   constructor(...args) {
@@ -124,7 +123,6 @@ class WorkPage extends React.Component {
       let yPos = this.yPositionArray[image - 1];
       let xPos = this.xPositionArray[image - 1];
 
-      console.log('xPOS: ', xPos, ', yPOS: ', yPos);
       return (
         <Draggable bounds="parent" key={image}
                   onStart={this.onStart.bind(this, image)}
@@ -143,7 +141,6 @@ class WorkPage extends React.Component {
     });
   }
 
-
   render() {
     return (
         <Navigation one="work" two="contact" three="root" four="about">
@@ -161,7 +158,6 @@ class WorkPage extends React.Component {
         </Navigation>
     );
   }
-
 };
 
 export default WorkPage;
