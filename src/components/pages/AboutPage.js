@@ -39,7 +39,7 @@ class AboutPage extends React.Component {
              </ScrollText>
              </div>
              <div className="absolute-button cursor-download">
-               <a href='../images/about/Wunderwerkz_capabilities.pdf' download>
+               <a href="../images/about/Wunderwerkz_capabilities.pdf" download>
                  <button> The Deck </button>
                </a>
              </div>

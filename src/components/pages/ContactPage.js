@@ -13,7 +13,7 @@ class ContactPage extends React.Component {
             <div className="flex-half center"
                  onClick={() => { browserHistory.push('/'); }}>
               <HalfText
-                className='cursor-click'>
+                className="cursor-click">
                  Reach Out and Touch Us
               </HalfText>
             </div>

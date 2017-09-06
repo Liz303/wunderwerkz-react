@@ -11,6 +11,20 @@ class App extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    let previousPath = this.props.location.pathname;
+    let nextPath =  nextProps.location.pathname;
+    if (previousPath !== nextPath) {
+      if (this.oneCard(previousPath, nextPath)) {
+        this.setState({cardsToMove: "one"});
+      } else if (this.twoCard(previousPath, nextPath)) {
+        this.setState({cardsToMove: "two"});
+      } else if (this.threeCard(previousPath, nextPath)) {
+        this.setState({cardsToMove: "three"});
+      }
+    }
+  }
+
   oneCard(previousPath, nextPath) {
     if ((previousPath === "/" && nextPath === "/about") ||
         (previousPath === "/about" && nextPath ==="/work") ||
@@ -41,20 +55,6 @@ class App extends React.Component {
     return false;
   }
 
-  componentWillReceiveProps(nextProps) {
-    let previousPath = this.props.location.pathname;
-    let nextPath =  nextProps.location.pathname;
-    if (previousPath !== nextPath) {
-      if (this.oneCard(previousPath, nextPath)) {
-        this.setState({cardsToMove: 'one'});
-      } else if (this.twoCard(previousPath, nextPath)) {
-        this.setState({cardsToMove: 'two'});
-      } else if (this.threeCard(previousPath, nextPath)) {
-        this.setState({cardsToMove: 'three'});
-      }
-    }
-  }
-
   render() {
     let path = this.props.location.pathname;
     let segment = path.split('/')[1] || 'root';
@@ -81,7 +81,7 @@ class App extends React.Component {
        </ReactCSSTransitionGroup>
        <div className="show-phone flex-wrapper center">
          <ScrollText
-           className='cursor-scroll'>
+           className="cursor-scroll">
          <div className="logo-wrap">
            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" x="0px" y="0px" width="100%" height="auto" viewBox="0 225.957 1024 319.543" enableBackground="new 0 225.957 1024 319.543">
              <path className="letter-part-three" fill="#231F20" d="M191.408,227.286h-24.693v0.907c11.646,2.784,20.892,11.759,24.063,23.252h0.63h0.555h0.63  c3.171-11.494,12.417-20.469,24.063-23.252v-0.907h-24.693H191.408z"/>

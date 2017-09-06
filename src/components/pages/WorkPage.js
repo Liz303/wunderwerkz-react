@@ -158,6 +158,6 @@ class WorkPage extends React.Component {
         </Navigation>
     );
   }
-};
+}
 
 export default WorkPage;
