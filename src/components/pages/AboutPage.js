@@ -36,6 +36,12 @@ class AboutPage extends React.Component {
                    get a little dangerous then we are the design studio for you.
                  </p>
                  <p className="center rainbow"> ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏ ✏</p>
+                 <h2> We've Worked With Some Cool Cats: </h2>
+                 <p className="small"> The Source 👌 RiNo Yacht Club 👌 Goldyn 👌 New Belgium Brewery 👌
+                    Line Skis 👌 South of France 👌 Among the Colors 👌
+                   Zeppelin Development 👌 34 degrees 👌 Dynia Architects 👌 Under Study 👌 Oso 👌
+                   Track Architecture 👌 Davis Graham & Stubbs 👌 Waves Zine 👌 Bun Bun 👌 Comal 👌
+                   Wurstküche 👌 Cart Driver 👌 Station 16 </p>
              </ScrollText>
              </div>
              <div className="absolute-button cursor-download">

@@ -41,6 +41,10 @@ p {
   font-size: 4vh;
   line-height: 7vh;
   padding: 15px;
+  &.small {
+    font-size: 3vh;
+    line-height: 6vh;
+  }
   .center {
     text-align: center;
   }
