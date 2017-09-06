@@ -56,11 +56,9 @@ class WorkPage extends React.Component {
       { id: 13,
         image: '13.png',
         description: "Signage for the hangry, because finding what you're looking for should be easy. Environmental Signage for Zeppelin Station."}];
-    this.colorArray = ['#00ffec', '#00b3a5', '#ff4300', '#cc3314'];
 
     this.yPositionArray = [];
     this.xPositionArray = [];
-    this.colorArrayStatic = [];
 
     this.winWidth = window.innerWidth - 100;
     this.winHeight = window.innerHeight -100;
@@ -68,12 +66,9 @@ class WorkPage extends React.Component {
     this.imageArray.forEach(i => {
       let yPos = this.getRandomInt(10, this.winHeight) + 'px';
       let xPos = this.getRandomInt(60, (this.winWidth - 60)) + 'px';
-      let color = this.colorArray[this.getRandomInt(0,3)];
       this.yPositionArray.push(yPos);
       this.xPositionArray.push(xPos);
-      this.colorArrayStatic.push(color);
     });
-    console.log(this.xPositionArray);
   }
 
   getRandomInt(min, max) {
@@ -83,18 +78,15 @@ class WorkPage extends React.Component {
   }
 
   setActiveElement(i) {
-    console.log('active element ', i);
     this.setState({activeElement: i});
   }
 
   onStart(i) {
-    console.log('start ', i);
    this.setState({activeDrags: ++this.state.activeDrags,
                   activeElement: i});
   }
 
   onStop() {
-    console.log('stopt');
     this.setState({activeDrags: --this.state.activeDrags});
   }
 
@@ -102,19 +94,18 @@ class WorkPage extends React.Component {
   renderimages() {
     return this.imageArray.map(i => {
       let image = i.id;
-      let border = '1px solid ' + this.colorArrayStatic[image - 1];
-      let boxShadow = '5px 5px ' + this.colorArrayStatic[image -1];
       let zIndex = this.state.activeElement === image ? '1000' : image;
       let yPos = this.yPositionArray[image - 1];
       let xPos = this.xPositionArray[image - 1];
 
+      console.log('xPOS: ', xPos, ', yPOS: ', yPos);
       return (
         <Draggable bounds="parent" key={image}
                   onStart={this.onStart.bind(this, image)}
                   onStop={this.onStop.bind(this)}>
            <div className="image-wrapper"
                 style={{position: 'absolute',
-                        bottom: yPos,
+                        top: yPos,
                         right: xPos,
                         zIndex: zIndex}}
                 onClick={this.setActiveElement.bind(this, image)}>

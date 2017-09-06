@@ -21,39 +21,41 @@ class ContactPage extends React.Component {
               <ScrollText
                 className='cursor-scroll'>
                 <div className="info-group">
-                  <p className="center single-line">
-                    📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍 📍
+                  <p className="left"> ✌ </p>
+                  <p className="left">
+                    Stop By <br/>
+                    <a href="https://www.google.com/maps/place/3515+Ringsby+Ct,+Denver,+CO+80216/@39.7733508,-104.9828953,17z/data=!3m1!4b1!4m5!3m4!1s0x876c7903ec2bc8b1:0x5782fe9631c8fd61!8m2!3d39.7733508!4d-104.9807066?sa=X&ved=0ahUKEwitgtycvITWAhVT6Z8KHRlVA5EQ8gEIJzAA"
+                       className="center">
+                      3515 Ringsby Ct #308 <br/> DENVER, CO 80216
+                    </a>
                   </p>
-                  <p> Stop By </p>
-                  <a href="https://www.google.com/maps/place/3515+Ringsby+Ct,+Denver,+CO+80216/@39.7733508,-104.9828953,17z/data=!3m1!4b1!4m5!3m4!1s0x876c7903ec2bc8b1:0x5782fe9631c8fd61!8m2!3d39.7733508!4d-104.9807066?sa=X&ved=0ahUKEwitgtycvITWAhVT6Z8KHRlVA5EQ8gEIJzAA"
-                     className="center">
-                    <p> 3515 Ringsby Ct #308 <br/> DENVER, CO 80216 </p>
-                  </a>
+                </div>
+
+                <div className="info-group">
+                  <p className="left"> 📫 </p>
+                  <p className="left">
+                    send a note <br/>
+                    <a href="mailto:hello@iheartwunderwerkz.com">
+                      hello@iheartwunderwerkz.com
+                    </a>
+                  </p>
+                </div>
+
+                <div className="info-group">
+                  <p className="left"> 📟 </p>
+                  <p className="left">
+                    drop a line <br/>
+                    303.594.4990
+                  </p>
                 </div>
                 <div className="info-group">
-                  <p className="center single-line">
-                    📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫 📫
+                  <p className="left"> 📷  </p>
+                  <p className="left">
+                    peep the grams <br/>
+                    <a href="https://www.instagram.com/wunder_werkz/">
+                      @wunder_werkz
+                    </a>
                   </p>
-                  <p> send a note </p>
-                  <a href="mailto:hello@iheartwunderwerkz.com">
-                    <p> hello@iheartwunderwerkz.com </p>
-                  </a>
-                </div>
-                <div className="info-group">
-                  <p className="center single-line">
-                    📟
-                  </p>
-                  <p> drop a line </p>
-                  <p>303.594.4990</p>
-                </div>
-                <div className="info-group">
-                  <p className="center single-line">
-                    📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷 📷
-                  </p>
-                  <p> peep the grams </p>
-                  <a href="https://www.instagram.com/wunder_werkz/">
-                    <p>@wunder_werkz</p>
-                  </a>
                 </div>
           </ScrollText>
             </div>
