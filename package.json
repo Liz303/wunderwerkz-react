@@ -33,6 +33,7 @@
   "license": "MIT",
   "dependencies": {
     "gsap": "1.20.2",
+    "npm": "6.5.0",
     "object-assign": "4.1.0",
     "react": "15.5.4",
     "react-addons-css-transition-group": "15.6.0",

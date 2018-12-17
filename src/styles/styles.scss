@@ -1,8 +1,9 @@
 @import "./mixins/flex";
-@import './flexbox';
-@import './vars';
+@import "./flexbox";
+@import "./vars";
 
-html, body {
+html,
+body {
   max-width: 100%;
   max-height: 100%;
   overflow: hidden;
@@ -29,7 +30,8 @@ h4 {
   text-transform: uppercase;
 }
 
-h2, h4 {
+h2,
+h4 {
   margin: 0;
   padding: 0 15px;
 }
@@ -61,26 +63,33 @@ p {
 a {
   color: inherit;
   text-decoration: none;
-  &:focus, &:hover, &:visited, &:active {
+  &:focus,
+  &:hover,
+  &:visited,
+  &:active {
     outline: none;
   }
 }
 
 .cursor-click {
-  cursor: url('./images/click.png'), auto;
+  // cursor: url("./images/click.png"), auto;
+  cursor: url("/styles/images/click.png"), auto;
 }
 
 .cursor-scroll {
-  cursor: url('./images/scroll.png'), auto;
+  // cursor: url("./images/scroll.png"), auto;
+  cursor: url("/styles/images/scroll.png"), auto;
 }
 
 .cursor-download {
   cursor: s-resize;
 }
 
-.react-draggable, .cursor {
+.react-draggable,
+.cursor {
   cursor: move;
-  cursor: url('./images/move.png'), auto;
+  // cursor: url("./images/move.png"), auto;
+  cursor: url("/styles/images/move.png"), auto;
 }
 .no-cursor {
   cursor: auto;
@@ -167,20 +176,23 @@ a {
 
 .contact {
   .scrolltext {
-    padding-top: 60%;
+    @include flexbox;
+    @include align-items(center);
+    flex-wrap: wrap;
+    padding-top: 60px;
+    height: calc(100vh - 60px);
     &:hover {
       p {
         color: black;
       }
-      a:hover{
+      a:hover {
         animation-name: rainbow;
-        animation-duration: .5s;
+        animation-duration: 0.5s;
         animation-iteration-count: infinite;
         animation-direction: alternate;
       }
     }
   }
-
 }
 
 // Card stuff
@@ -191,7 +203,7 @@ a {
   left: 10px;
   bottom: 0;
   border-left: 3px solid black;
-  transition: all .5s linear;
+  transition: all 0.5s linear;
   background: white;
   &.active {
     left: 20px;
@@ -208,13 +220,15 @@ a {
   &.four {
     left: 0;
   }
-  &.two, &.three, &.four {
+  &.two,
+  &.three,
+  &.four {
     cursor: pointer;
   }
   .sidebar {
     left: 0;
     height: 100vh;
-    z-index: 1;;
+    z-index: 1;
     padding-left: 5px;
   }
 }
@@ -226,8 +240,9 @@ a {
   left: 20px;
   height: 100%;
   overflow: hidden;
-  .flex-wrapper, .flex-half {
-    height: 100%;
+  .flex-wrapper,
+  .flex-half {
+    min-height: 100vh;
   }
   &.home {
     -webkit-background-size: cover;
@@ -250,8 +265,10 @@ a {
   }
 }
 
-svg path, svg path:hover, svg polygon:hover {
-    fill: #FFF;
+svg path,
+svg path:hover,
+svg polygon:hover {
+  fill: #fff;
 }
 svg polygon {
   fill: $turquoise;
@@ -269,8 +286,8 @@ button {
   text-transform: uppercase;
   font-family: Nevis-Bold;
   font-weight: 400;
-  background-color: #00FFEC;
-  color: #FFF;
+  background-color: #00ffec;
+  color: #fff;
   cursor: pointer;
 }
 .full-width-button {
@@ -296,12 +313,12 @@ button {
 .absolute-button {
   position: absolute;
   top: calc(50% - 50px);
-  transition: all .5s linear;
+  transition: all 0.5s linear;
   button {
     border-radius: 50%;
-  	width: 100px;
-  	height: 100px;
-    transition: all .5s linear;
+    width: 100px;
+    height: 100px;
+    transition: all 0.5s linear;
   }
   &:hover {
     top: calc(50% - 60px);
@@ -317,13 +334,10 @@ button {
 }
 
 .scrolltext {
-  height: 100%;
+  height: 100vh;
   overflow-y: scroll;
-  overflow-x: hidden;
-  position: absolute;
-  right: -10px;
-  padding: 0 15px;
-  width: calc(100% - 30px);
+  padding: 0 60px;
+  width: calc(100% - 120px);
   p:nth-child(2) {
     padding-top: 0;
   }
@@ -334,49 +348,72 @@ button {
 }
 
 .leaveActive {
-  transition: all .5s;
+  transition: all 0.5s;
   opacity: 0;
 }
 
 .appear {
   opacity: 0;
-  transition: all .5s linear;
+  transition: all 0.5s linear;
 }
 
 .appearActive {
   opacity: 1;
-  transition: all .5s linear;
-  left: 0px ;
+  transition: all 0.5s linear;
+  left: 0px;
 }
 
 .enter {
   opacity: 0;
   &.enterActive {
-    transition: all .5s;
+    transition: all 0.5s;
     opacity: 1;
   }
 }
 
-
 .one {
-  .leave .one { transform: translate3d(0, 0, 0); }
-  .leaveActive .one { transform: translate3d(100%, 0, 0); }
-  .appear { left: -15px; }
-  .enter { left: -15px; }
+  .leave .one {
+    transform: translate3d(0, 0, 0);
+  }
+  .leaveActive .one {
+    transform: translate3d(100%, 0, 0);
+  }
+  .appear {
+    left: -15px;
+  }
+  .enter {
+    left: -15px;
+  }
 }
 
 .two {
-  .leave .two { transform: translate3d(0, 0, 0); }
-  .leaveActive .two { transform: translate3d(100%, 0, 0); }
-  .appear { left: -30px; }
-  .enter { left: -30px; }
+  .leave .two {
+    transform: translate3d(0, 0, 0);
+  }
+  .leaveActive .two {
+    transform: translate3d(100%, 0, 0);
+  }
+  .appear {
+    left: -30px;
+  }
+  .enter {
+    left: -30px;
+  }
 }
 
 .three {
-  .leave .three { transform: translate3d(0, 0, 0); }
-  .leaveActive .three { transform: translate3d(100%, 0, 0); }
-  .appear { left: -45px; }
-  .enter { left: -45px; }
+  .leave .three {
+    transform: translate3d(0, 0, 0);
+  }
+  .leaveActive .three {
+    transform: translate3d(100%, 0, 0);
+  }
+  .appear {
+    left: -45px;
+  }
+  .enter {
+    left: -45px;
+  }
 }
 
 .show-phone {
