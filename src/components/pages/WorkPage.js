@@ -195,7 +195,9 @@ class WorkPage extends React.Component {
         <div className="work page">
           {this.renderimages()}
           <div className="instagram-link rainbow">
-            some stuff we're doing <br /> @wunder_werkz
+            <a href="https://www.instagram.com/wunder_werkz/" target="blank">
+              some stuff we're doing <br /> @wunder_werkz
+            </a>
           </div>
           <div className="info-box">
             <p>
