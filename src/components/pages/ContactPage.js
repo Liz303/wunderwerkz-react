@@ -31,10 +31,11 @@ class ContactPage extends React.Component {
                     <p className="left">
                       Stop By <br />
                       <a
-                        href="https://www.google.com/maps/place/3515+Ringsby+Ct,+Denver,+CO+80216/@39.7733508,-104.9828953,17z/data=!3m1!4b1!4m5!3m4!1s0x876c7903ec2bc8b1:0x5782fe9631c8fd61!8m2!3d39.7733508!4d-104.9807066?sa=X&ved=0ahUKEwitgtycvITWAhVT6Z8KHRlVA5EQ8gEIJzAA"
+                        href="https://goo.gl/maps/VvSC31W36duda8oTA"
                         className="center"
                       >
-                        3515 Ringsby Ct #308 <br /> DENVER, CO 80216
+                        3455 Ringsby Ct #112 <br /> DENVER, CO 80216 <br /> USA
+                        <br /> Earf
                       </a>
                     </p>
                   </div>
